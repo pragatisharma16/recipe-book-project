@@ -1,0 +1,33 @@
+<!-- <div class="row">
+  <div class="col-xs-12">
+    <h1>My Servers</h1>
+    <button (click) = "onAddServer()" type="button" class="btn btn-primary">Add Server</button>
+    <br> <br>
+
+  <ul class="list-group">
+
+  <li *ngFor = "let server of servers; let i = index" (click) = "onRemoveServer(i)" class="list-group-item">
+    {{server}}
+  </li>
+</ul>
+</div>
+</div> -->
+<div class="container">
+    <app-cockpit (serverCreated) = "onServerAdded($event)"
+    (blueprintCreated) = "onBlueprintAdded($event)"></app-cockpit>
+    <hr>
+
+<div class="row">
+  <div class="col-xs-12">
+      <button class="btn btn-primary" type="button" (click) = "onChange()">change first element</button>
+      <button class="btn btn-danger" type="button" (click) = "onDestroy()">Destroy first element</button>
+    <app-server-content *ngFor = "let serverElement of serverElements" [srvElement]="serverElement"
+    [name]="serverElement.name">
+      <p #content>
+        <strong *ngIf = "serverElement.type === 'server'" style="color: red">{{serverElement.content}}</strong>
+        <em *ngIf = "serverElement.type === 'blueprint'" style="color: blueviolet">{{serverElement.content}}</em>
+    </p>
+    </app-server-content>
+  </div>
+</div>
+</div>

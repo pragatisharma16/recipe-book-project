@@ -1,0 +1,48 @@
+<div class="top-title-sec other-screen-logo-sec full">
+  <div class="container">
+    <div class="top-title-inner full">
+      <h3><span class="title-arrow">
+        </span> Login </h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="page-inner-sec full">
+    <div class="main-content-sec full">
+      <form class="main-form-sec-group greay-from-border" [formGroup]="loginForm" (ngSubmit)="saveLogin()">
+        <div class="full congo-sec">
+          <div class="form-group" [ngClass]="{'has-error': submitted  && f.email.errors}">
+            <input type="email" class="form-control" formControlName="email" placeholder="Email Address">
+            <span class="help-block" *ngIf="submitted && f.email.errors">
+              <span *ngIf="f.email.errors.required">Email address is required</span>
+            </span>
+          </div>
+          <div class="form-group" [ngClass]="{'has-error': submitted  && f.password.errors}">
+            <div class="full first-bank-account">
+              <input type="text" class="form-control passtxt" formControlName="password" placeholder="Password"
+                autocomplete="off" #passRef>
+              <span class="show-password-icon" (click)="showOrHideBankNumber()"><i class="fa fa-eye" aria-hidden="true"
+                  #showhideRef></i></span>
+              <span class="help-block" *ngIf="submitted && f.password.errors">
+                <span *ngIf="f.password.errors.required">Password is required</span>
+              </span>
+            </div>
+          </div>
+
+          <span class="serach-btn pull-right" routerLink="/reset-password">Forgot Password?</span>
+
+          <div class="full form-btn-sec start-in-sec">
+            <div class="form-group full">
+              <button type="submit" name="button" value="submit" class="btn green-btn"
+                [disabled]="!loginForm.valid">Login</button>
+            </div>
+            <div class="full text-center">
+              <span class="text-light">Don't have an account? <span class="serach-btn">Signup</span></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+
+
+<div *ngIf="showMePartially; else elsepart ">
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Shopping Mart</h1>
+      <p>Shopping Mart welcomes you with all the products,brands and Exclusive offers.</p>
+    </div>
+
+  </div>
+</div>
+<ng-template #elsepart>
+  <div class="container">
+    <h2>Men's Fashion</h2>
+    <p>A well-tied tie is the first serious step in life</p>
+    <p>Clothes don’t make a man, but clothes have got many a man a good job.</p>
+    <p>Dress like you’ve made something of yourself, even if you haven’t.</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/fjords.jpg" (click) = "openImage()">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzJDylgPS92rK-IdUZQrcCtmK0I2hrokD1L0O-7fSmKAX5T5ns" alt="Fjords" style="width:100%">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/nature.jpg" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY6l9RMR94M5tohmpBvgYM7JXUfC0_JilCcyYpa
+            Gfe31ZJvxsY" alt="Nature" style="width:100%">
+
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/fjords.jpg" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzJDylgPS92rK-IdUZQrcCtmK0I2hrokD1L0O-7fSmKAX5T5ns" alt="Fjords" style="width:100%">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/fjords.jpg" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzJDylgPS92rK-IdUZQrcCtmK0I2hrokD1L0O-7fSmKAX5T5ns" alt="Fjords" style="width:100%">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/fjords.jpg" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzJDylgPS92rK-IdUZQrcCtmK0I2hrokD1L0O-7fSmKAX5T5ns" alt="Fjords" style="width:100%">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/fjords.jpg" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzJDylgPS92rK-IdUZQrcCtmK0I2hrokD1L0O-7fSmKAX5T5ns" alt="Fjords" style="width:100%">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </ng-template>

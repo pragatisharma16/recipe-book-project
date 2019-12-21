@@ -1,0 +1,49 @@
+<div class="container center_div">
+  <form #userForm = "ngForm"  (ngSubmit) = "onSubmit()" >
+
+
+  <div class="full congo-sec">
+            Name:
+            <input type="name" required #name = "ngModel" [class.is-invalid] = "name.invalid && name.touched" class="form-control" name="name" placeholder="name" [(ngModel)] = "userModel.name">
+                    <small class = "text-danger" [hidden]= "name.valid || name.untouched ">name is required</small>
+
+          </div>
+  <div class="full congo-sec">
+          <div class="form-group" [ngClass]="{'has-error': submitted  && f.email.errors}">
+            <input type="email" required class="form-control" name="email" placeholder="Email Address"
+            #email="ngModel"
+            [class.is-invalid] = "email.invalid && email.touched"
+             [(ngModel)] = "userModel.email">
+                    <small class = "text-danger" [hidden]= "email.valid || email.untouched ">email is required</small>
+
+          </div>
+          </div>
+
+              <div class="form-group" [ngClass]="{'has-error': submitted  && f.password.errors}">
+            <div class="full first-bank-account">
+              <input type="text" required class="form-control passtxt" name="password" placeholder="Password"
+                autocomplete="off" #passRef [(ngModel)] = "userModel.password">
+              <span class="show-password-icon" (click)="showOrHideBankNumber()"><i class="fa fa-eye" aria-hidden="true"
+                  #showhideRef></i></span>
+              <span class="help-block" *ngIf="submitted && f.password.errors">
+                <span *ngIf="f.password.errors.required">Password is required</span>
+              </span>
+            </div>
+          </div>
+
+<div  class = "form-group">
+  <label>Gender</label>
+<div class="form-check">
+  <input type="radio" name="Gender" value="male" class="form-check-input" ngModel >
+<label class="form-check-label">Male</label>
+</div>
+<div  class = "form-check">
+  <input type="radio" name="Gender" value="female" class="form-check-input" ngModel>
+<label class="form-check-label">female</label>
+</div>
+</div>
+
+<button [disabled] = "userForm.form.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
